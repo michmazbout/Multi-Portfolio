@@ -100,3 +100,22 @@ button:focus {
 	outline: none;
 }
 
+@media (max-width: 600px) {
+  .lg-btn {
+    width: 80vw;       /* smaller width on mobile */
+    height: 12vw;      /* smaller height */
+    font-size: 4vw;    /* smaller font */
+    border-radius: 8vw 7vw 8vw 7vw;  /* adjust border radius */
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .lg-btn {
+    height: 10vw;
+    font-size: 3.5vw;
+  }
+}
