@@ -1,127 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio Toggle with Glass Buttons</title>
+  <title>Portfolio Selector</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* Your existing styles */
-    #info {
-      position: absolute;
-      left: 5px;
-      bottom: 10px;
-      color: #fff;
+    body {
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-image: url("https://assets.codepen.io/443195/carl-raw-8Gdayy2Lhi0-unsplash.jpg");
+      animation: drift 60s ease-in-out infinite alternate;
       font-family: sans-serif;
-      font-size: 10px;
     }
 
     .container {
-      position: absolute;
-      display: grid;
-      place-items: center;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding-top: 100px; /* give space for iframe */
-      background-image: url("https://assets.codepen.io/443195/carl-raw-8Gdayy2Lhi0-unsplash.jpg");
-      animation: drift 60s ease-in-out infinite alternate;
-      height: 150px; /* container height for buttons */
+      display: flex;
+      gap: 2rem;
     }
 
     .lg-btn {
-      width: 50vmin;
-      height: 20vmin;
-      border-radius: 10.2vmin 9.8vmin 10.2vmin 9.8vmin;
+      width: 15rem;
+      height: 6rem;
+      border-radius: 3rem;
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(4px);
-      box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.3),
-        inset -2px -2px 2px 1px rgba(255, 255, 255, 0.3), 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      box-shadow:
+        inset 2px 2px 1px 0 rgba(255, 255, 255, 0.3),
+        inset -2px -2px 2px 1px rgba(255, 255, 255, 0.3),
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.2);
       color: rgba(255, 255, 255, 0.8);
-      font-size: 5vmin;
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.5);
+      font-size: 1.5rem;
       cursor: pointer;
-      margin: 0 10px;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.5);
+      user-select: none;
     }
 
     .lg-btn:hover {
       transform: scale(1.05);
-      border-radius: 9.8vmin 10.2vmin 9.8vmin 10.2vmin;
+      border-radius: 2.8rem;
     }
 
     @keyframes drift {
-      0% {
-        background-position: 50% 50%;
-      }
-      25% {
-        background-position: 60% 40%;
-      }
-      50% {
-        background-position: 40% 60%;
-      }
-      75% {
-        background-position: 55% 45%;
-      }
-      100% {
-        background-position: 50% 50%;
-      }
-    }
-
-    /* iframe styling */
-    #website-frame {
-      position: absolute;
-      top: 150px; /* below the buttons container */
-      left: 0;
-      width: 100vw;
-      height: calc(100vh - 150px);
-      border: none;
-    }
-
-    /* reset button */
-    button {
-      display: inline-block;
-      border: none;
-      margin: 0;
-      padding: 0;
-      background: none;
-      border-radius: 0;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      color: inherit;
-      font-family: inherit;
-    }
-
-    button:focus {
-      outline: none;
+      0% { background-position: 50% 50%; }
+      25% { background-position: 60% 40%; }
+      50% { background-position: 40% 60%; }
+      75% { background-position: 55% 45%; }
+      100% { background-position: 50% 50%; }
     }
   </style>
 </head>
 <body>
-
-  <div class="container" id="bg">
-    <button class="lg-btn" id="btn-portfolio1">Portfolio 1</button>
-    <button class="lg-btn gl" id="btn-portfolio2">Portfolio 2</button>
+  <div class="container">
+    <button class="lg-btn" onclick="window.open('https://portfolio-three-gamma-71.vercel.app/', '_blank')">Portfolio 1</button>
+    <button class="lg-btn" onclick="window.open('https://classic-portfolio-xi.vercel.app/', '_blank')">Portfolio 2</button>
   </div>
-
-  <iframe id="website-frame" src="https://portfolio-three-gamma-71.vercel.app/"></iframe>
-
-  <small id="info">Click the buttons above to switch between portfolios.</small>
-
-  <script>
-    const btn1 = document.getElementById('btn-portfolio1');
-    const btn2 = document.getElementById('btn-portfolio2');
-    const frame = document.getElementById('website-frame');
-
-    btn1.addEventListener('click', () => {
-      frame.src = "https://portfolio-three-gamma-71.vercel.app/";
-    });
-
-    btn2.addEventListener('click', () => {
-      frame.src = "https://classic-portfolio-xi.vercel.app/";
-    });
-  </script>
-
 </body>
 </html>
