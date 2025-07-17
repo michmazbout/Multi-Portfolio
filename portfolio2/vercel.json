@@ -1,7 +1,13 @@
 {
+    "cleanUrls": true,
     "rewrites": [
-        { "source": "/portfolio2/", "destination": "/code/index.html" },
-        { "source": "/portfolio2/script.js", "destination": "/code/script.js" },
-        { "source": "/portfolio2/style.css", "destination": "/code/style.css" }
+      { "source": "/", "destination": "/index.html" },
+  
+      { "source": "/portfolio1", "destination": "/portfolio1-dist/index.html" },
+      { "source": "/portfolio1/(.*)", "destination": "/portfolio1-dist/$1" },
+  
+      { "source": "/portfolio2", "destination": "/portfolio2/code/index.html" },
+      { "source": "/portfolio2/(.*)", "destination": "/portfolio2/$1" }
     ]
-}
+  }
+  
