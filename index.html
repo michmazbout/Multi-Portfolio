@@ -1,7 +1,31 @@
-<h1>Debug View</h1>
-<ul>
-  <li><a href="/portfolio1">Test Portfolio 1</a></li>
-  <li><a href="/portfolio2">Test Portfolio 2</a></li>
-  <li><a href="/portfolio1-dist/index.html">Raw portfolio1-dist</a></li>
-  <li><a href="/portfolio2/code/index.html">Raw portfolio2/code</a></li>
-</ul>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Apple Liquid Glass Experiments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container" id="bg">
+	<button class="lg-btn">Simple blur</button>
+	<button class="lg-btn gl">SVG backdrop</button>
+</div>
+
+<small id="info">Ironically, backdrop-filters with SVGs (url(#filter)) seem not to be supported on iOS :)</small>
+
+
+
+<svg style="display: none">
+	<filter id="filter" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+		<feDisplacementMap in="SourceGraphic" in2="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap" />
+		<feGaussianBlur stdDeviation="3 3" x="0%" y="0%" width="100%" height="100%" in="displacementMap" edgeMode="none" result="blur" />
+	</filter>
+
+</svg>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
