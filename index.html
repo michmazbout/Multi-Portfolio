@@ -1,51 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Portfolio</title>
-    <style>
-        body { margin: 0; }
-        #toggle-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            padding: 10px 15px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #website-frame {
-            width: 100vw;
-            height: 100vh;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-    <!-- Toggle Button -->
-    <button id="toggle-btn">Switch to Portfolio 2</button>
-
-    <!-- Embedded Website (Starts with Portfolio 1) -->
-    <iframe id="website-frame" src="/portfolio1"></iframe>
-
-    <script>
-        const btn = document.getElementById('toggle-btn');
-        const frame = document.getElementById('website-frame');
-        let currentPortfolio = 1;
-
-        btn.addEventListener('click', () => {
-            if (currentPortfolio === 1) {
-                frame.src = "/portfolio2";
-                btn.textContent = "Switch to Portfolio 1";
-                currentPortfolio = 2;
-            } else {
-                frame.src = "/portfolio1";
-                btn.textContent = "Switch to Portfolio 2";
-                currentPortfolio = 1;
-            }
-        });
-    </script>
-</body>
-</html>
+<h1>Debug View</h1>
+<ul>
+  <li><a href="/portfolio1">Test Portfolio 1</a></li>
+  <li><a href="/portfolio2">Test Portfolio 2</a></li>
+  <li><a href="/portfolio1-dist/index.html">Raw portfolio1-dist</a></li>
+  <li><a href="/portfolio2/code/index.html">Raw portfolio2/code</a></li>
+</ul>
