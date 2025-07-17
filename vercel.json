@@ -1,7 +1,13 @@
 {
-    "routes": [
-        { "src": "/portfolio1/(.*)", "dest": "/portfolio1" },
-        { "src": "/portfolio2/(.*)", "dest": "/portfolio2" },
-        { "src": "/", "dest": "/index.html" }
+    "cleanUrls": true,
+    "rewrites": [
+      { "source": "/", "destination": "/index.html" },
+  
+      { "source": "/portfolio1", "destination": "/portfolio1-dist/index.html" },
+      { "source": "/portfolio1/(.*)", "destination": "/portfolio1-dist/$1" },
+  
+      { "source": "/portfolio2", "destination": "/portfolio2/code/index.html" },
+      { "source": "/portfolio2/(.*)", "destination": "/portfolio2/$1" }
     ]
-}
+  }
+  
